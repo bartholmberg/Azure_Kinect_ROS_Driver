@@ -75,7 +75,7 @@ set_target_properties(${PROJECT_NAME}_node PROPERTIES OUTPUT_NAME node PREFIX ""
 #### AZURE KINECT SDK ######
 ############################
 
-message("Finding K4A SDK binaries")
+message("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&Finding K4A SDK binaries")
 
 # Disable cached locations for K4A SDK binaries.
 # Do this to force the search logic to happen correctly.
@@ -137,7 +137,9 @@ install(TARGETS ${PROJECT_NAME}_node
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
-
+message (STATUS "*********libary destination")
+message ( STATUS "***********>>>> ${CATKIN_PACKAGE_LIB_DESTINATION}" ) 
+message ( STATUS "***********>>>> ${CATKIN_GLOBAL_LIB_DESTINATION}" ) 
 install(TARGETS ${PROJECT_NAME}_nodelet
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
