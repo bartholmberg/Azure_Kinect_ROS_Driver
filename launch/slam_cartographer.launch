@@ -15,7 +15,7 @@ Licensed under the MIT License.
         <arg name="required"          value="true" />
     </include>
 
-  <!-- Start Google Cartographer, configuired to consumer K4A data -->
+  <!-- Start Google Cartographer, configured to consumer K4A data -->
   <include file="$(find azure_kinect_ros_driver)/launch/cartographer.launch" />
 
 </launch>
