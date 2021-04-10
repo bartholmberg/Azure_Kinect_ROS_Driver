@@ -222,6 +222,11 @@ void K4ACalibrationTransformData::publishDepthToBaseTf()
   static_transform.transform.rotation.z = depth_rotation.z();
   static_transform.transform.rotation.w = depth_rotation.w();
 
+ // static_transform.transform.rotation.x = 0.0;
+ // static_transform.transform.rotation.y = 0.0;
+ // static_transform.transform.rotation.z = 0.0;
+  //static_transform.transform.rotation.w = 1.00f;
+ // std::cout<< "rotaton info:--------------------> *******:" << depth_rotation.x()<<" " << depth_rotation.y()<<" " << depth_rotation.z() << std::endl;
   static_broadcaster_.sendTransform(static_transform);
 }
 
@@ -247,8 +252,9 @@ tf2::Quaternion K4ACalibrationTransformData::getDepthToBaseRotationCorrection()
                                         // camera_base
   tf2::Quaternion depth_rotation;       // K4A has one physical camera that is about 6 degrees downward facing.
 
-  depth_rotation.setEuler(0, angles::from_degrees(-6.0), 0);
+  depth_rotation.setEuler(0, angles::from_degrees(-6.0),0 );
   ros_camera_rotation.setEuler(M_PI / -2.0f, M_PI, (M_PI / 2.0f));
+
 
   return ros_camera_rotation * depth_rotation;
 }
