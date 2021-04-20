@@ -12,7 +12,7 @@ Licensed under the MIT License.
         <arg name="fps"               value="5" />
         <arg name="point_cloud"       value="true" />
         <arg name="rgb_point_cloud"   value="false" />
-		<arg name="imu_rate_target" value="1600"/>
+		<arg name="imu_rate_target" value="15"/>
         <arg name="required"          value="true" />
     </include>
 
