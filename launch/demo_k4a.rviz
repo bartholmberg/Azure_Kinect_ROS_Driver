@@ -8,7 +8,7 @@ Panels:
         - /Status1
         - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/imu_link1
+        - /TF1/Frames1/camera_base1
         - /Submaps1
         - /PointCloud21
         - /Trajectories1
@@ -73,6 +73,10 @@ Visualization Manager:
         All Enabled: false
         camera_base:
           Value: false
+        camera_body:
+          Value: true
+        camera_visor:
+          Value: true
         depth_camera_link:
           Value: false
         imu_link:
@@ -90,15 +94,18 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        camera_base:
-          depth_camera_link:
-            imu_link:
-              {}
-            rgb_camera_link:
-              {}
         map:
           odom:
-            {}
+            camera_base:
+              camera_body:
+                {}
+              camera_visor:
+                {}
+              depth_camera_link:
+                imu_link:
+                  {}
+                rgb_camera_link:
+                  {}
       Update Interval: 0
       Value: true
     - Alpha: 1
@@ -286,7 +293,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: imu_link
+    Fixed Frame: odom
     Frame Rate: 5
   Name: root
   Tools:
@@ -310,7 +317,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 3.853358745574951
+      Distance: 13.295612335205078
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -323,12 +330,12 @@ Visualization Manager:
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: true
+      Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.3303976058959961
+      Pitch: 0.8253971934318542
       Target Frame: camera_base
-      Yaw: 2.900423288345337
+      Yaw: 3.180424928665161
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -368,5 +375,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 61
-  Y: 58
+  X: 724
+  Y: 67

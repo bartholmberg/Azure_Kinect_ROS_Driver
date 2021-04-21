@@ -3,7 +3,6 @@
  Copyright (c) Microsoft Corporation. All rights reserved.
  Licensed under the MIT License. Blah
  -->
-
 <robot name="azure-kinect" xmlns:xacro="http://www.ros.org/wiki/xacro">
   <xacro:arg name="tf_prefix" default=""/>
   <material name="black">
@@ -14,12 +13,59 @@
   </material>
   <material name="grey">
     <color rgba="0.6 0.6 0.6 1" />
+ </material>
+  <material name="gray">
+    <color rgba="0.2 0.2 0.2 1" />
+  </material>
+  <material name="brightRed">
+    <color rgba="1.0 0 0 1.0" />
   </material>
   <material name="white">
     <color rgba="0.9 0.9 0.9 1" />
   </material>
-
-  <link name="$(arg tf_prefix)camera_body">
+    <material name="orange">
+    <color rgba="1.0 0.5 0.2 1" />
+  </material>
+  <link name="camera_base">
+    <visual>
+      <origin xyz="-0.013 0. 0." />
+      <geometry>
+        <box size="0.026 0.103 0.039" />
+      </geometry>
+	  <parent link="map" />
+      <material name="brightRed" />
+    </visual>
+  </link>
+  <link name="depth_camera_link">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.05" radius="0.03" />
+      </geometry>
+      <material name="gray" />
+    </visual>
+  </link>
+  <link name="imu_link">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.06 0.04 0.02" />
+      </geometry>
+      <material name="orange" />
+    </visual>
+  </link>
+  <joint name="imu_link_joint" type="fixed">
+    <parent link="camera_base" />
+    <child link="imu_link" />
+    <origin xyz="0 0 0" />
+  </joint>
+    <joint name="depth_camera_link_joint" type="fixed">
+    <parent link="camera_base" />
+    <child link="depth_camera_link" />
+	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
+    <origin rpy="0 1.570796 0" xyz="0.000 0 0.0000" />
+  </joint>
+  <link name="camera_body">
     <visual>
       <origin xyz="0. 0. 0." />
       <geometry>
@@ -28,18 +74,7 @@
       <material name="white" />
     </visual>
   </link>
-
-  <link name="$(arg tf_prefix)camera_base">
-    <visual>
-      <origin xyz="-0.013 0. 0." />
-      <geometry>
-        <box size="0.026 0.103 0.039" />
-      </geometry>
-      <material name="grey" />
-    </visual>
-  </link>
-
-  <link name="$(arg tf_prefix)camera_visor">
+  <link name="camera_visor">
     <visual>
       <origin xyz="-0.0128 0. 0." />
       <geometry>
@@ -49,15 +84,15 @@
     </visual>
   </link>
 
-  <joint name="$(arg tf_prefix)camera_base_to_body" type="fixed">
-    <parent link="$(arg tf_prefix)camera_base" />
-    <child link="$(arg tf_prefix)camera_body" />
+  <joint name="camera_base_to_body" type="fixed">
+    <parent link="camera_base" />
+    <child link="camera_body" />
     <origin xyz="-0.0757 0. 0.008" rpy="0. 0. 0." />
   </joint>
 
   <joint name="$(arg tf_prefix)camera_base_to_visor" type="fixed">
-    <parent link="$(arg tf_prefix)camera_base" />
-    <child link="$(arg tf_prefix)camera_visor" />
+    <parent link="camera_base" />
+    <child link="camera_visor" />
     <origin xyz="0. 0. 0." rpy="0. 0. 0." />
   </joint>
 </robot>
