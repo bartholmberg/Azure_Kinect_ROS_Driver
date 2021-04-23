@@ -26,7 +26,7 @@
     <material name="orange">
     <color rgba="1.0 0.5 0.2 1" />
   </material>
-  <link name="camera_base">
+  <link name="base_link">
     <visual>
       <origin xyz="-0.013 0. 0." />
       <geometry>
@@ -46,6 +46,7 @@
     </visual>
   </link>
   <link name="imu_link">
+      <parent link="base_link" />
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -54,16 +55,16 @@
       <material name="orange" />
     </visual>
   </link>
-  <joint name="imu_link_joint" type="fixed">
-    <parent link="camera_base" />
+  <joint name="base_imu_joint" type="fixed">
+    <parent link="base_link" />
     <child link="imu_link" />
     <origin xyz="0 0 0" />
   </joint>
-    <joint name="depth_camera_link_joint" type="fixed">
-    <parent link="camera_base" />
+  <joint name="base_depth_joint" type="fixed">
+    <parent link="base_link" />
     <child link="depth_camera_link" />
 	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
-    <origin rpy="0 0 0" xyz="0.000 0 0.0000" />
+    <origin rpy="0 -1.570796 0" xyz="0.000 0 0.0000" />
   </joint>
   <link name="camera_body">
     <visual>
@@ -84,14 +85,14 @@
     </visual>
   </link>
 
-  <joint name="camera_base_to_body" type="fixed">
-    <parent link="camera_base" />
+  <joint name="base_to_body" type="fixed">
+    <parent link="base_link" />
     <child link="camera_body" />
     <origin xyz="-0.0757 0. 0.008" rpy="0. 0. 0." />
   </joint>
 
-  <joint name="$(arg tf_prefix)camera_base_to_visor" type="fixed">
-    <parent link="camera_base" />
+  <joint name="base_to_visor" type="fixed">
+    <parent link="base_link" />
     <child link="camera_visor" />
     <origin xyz="0. 0. 0." rpy="0. 0. 0." />
   </joint>
