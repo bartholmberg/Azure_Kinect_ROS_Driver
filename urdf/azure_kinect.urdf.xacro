@@ -32,7 +32,7 @@
       <geometry>
         <box size="0.026 0.103 0.039" />
       </geometry>
-	  <parent link="map" />
+	  <parent link="odom" />
       <material name="brightRed" />
     </visual>
   </link>
@@ -63,7 +63,7 @@
     <parent link="camera_base" />
     <child link="depth_camera_link" />
 	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
-    <origin rpy="0 1.570796 0" xyz="0.000 0 0.0000" />
+    <origin rpy="0 0 0" xyz="0.000 0 0.0000" />
   </joint>
   <link name="camera_body">
     <visual>

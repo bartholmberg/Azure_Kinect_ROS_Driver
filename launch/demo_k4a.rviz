@@ -8,15 +8,15 @@ Panels:
         - /Status1
         - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/camera_base1
         - /Submaps1
-        - /PointCloud21
-        - /Trajectories1
+        - /Submaps1/Status1
+        - /Submaps1/Submaps1
+        - /Submaps1/Submaps1/Trajectory 01
         - /Trajectories1/Namespaces1
-        - /Landmark Poses1
         - /Imu1/Box properties1
         - /Imu1/Axes properties1
         - /Imu1/Acceleration properties1
+        - /Map1
         - /DepthCloud1/Auto Size1
         - /DepthCloud1/Occlusion Compensation1
         - /Camera1
@@ -74,17 +74,17 @@ Visualization Manager:
         camera_base:
           Value: false
         camera_body:
-          Value: true
+          Value: false
         camera_visor:
-          Value: true
+          Value: false
         depth_camera_link:
           Value: false
         imu_link:
           Value: true
         map:
-          Value: true
-        odom:
           Value: false
+        odom:
+          Value: true
         rgb_camera_link:
           Value: false
       Marker Alpha: 0.800000011920929
@@ -125,7 +125,7 @@ Visualization Manager:
       Value: false
       Visual Enabled: true
     - Class: Submaps
-      Enabled: false
+      Enabled: true
       Fade-out distance: 1
       High Resolution: true
       Low Resolution: false
@@ -135,10 +135,24 @@ Visualization Manager:
       Submaps:
         All: false
         All Submap Pose Markers: false
+        Trajectory 0:
+          0.120: false
+          1.120: false
+          10.35: false
+          2.120: false
+          3.120: false
+          4.120: false
+          5.120: false
+          6.120: false
+          7.120: true
+          8.120: false
+          9.95: false
+          Submap Pose Markers: false
+          Value: false
       Topic: /submap_list
       Tracking frame: base_link
       Unreliable: false
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -317,7 +331,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 13.295612335205078
+      Distance: 8.691460609436035
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -333,9 +347,9 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.8253971934318542
+      Pitch: 0.14539799094200134
       Target Frame: camera_base
-      Yaw: 3.180424928665161
+      Yaw: 2.1004064083099365
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -375,5 +389,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 724
-  Y: 67
+  X: 485
+  Y: 77
