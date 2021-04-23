@@ -26,27 +26,19 @@
     <material name="orange">
     <color rgba="1.0 0.5 0.2 1" />
   </material>
+  
   <link name="base_link">
+  	  <parent link="odom" />
     <visual>
       <origin xyz="-0.013 0. 0." />
       <geometry>
         <box size="0.026 0.103 0.039" />
       </geometry>
-	  <parent link="odom" />
       <material name="brightRed" />
     </visual>
   </link>
-  <link name="depth_camera_link">
-    <visual>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.05" radius="0.03" />
-      </geometry>
-      <material name="gray" />
-    </visual>
-  </link>
-  <link name="imu_link">
-      <parent link="base_link" />
+    <link name="imu_link">
+      <parent link="odom" />
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -55,17 +47,18 @@
       <material name="orange" />
     </visual>
   </link>
-  <joint name="base_imu_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="imu_link" />
-    <origin xyz="0 0 0" />
-  </joint>
-  <joint name="base_depth_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="depth_camera_link" />
-	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
-    <origin rpy="0 -1.570796 0" xyz="0.000 0 0.0000" />
-  </joint>
+  <link name="depth_camera_link">
+    <parent link="odom" />
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.05" radius="0.03" />
+      </geometry>
+      <material name="gray" />
+    </visual>
+  </link>
+
+
   <link name="camera_body">
     <visual>
       <origin xyz="0. 0. 0." />
@@ -84,7 +77,6 @@
       <material name="black" />
     </visual>
   </link>
-
   <joint name="base_to_body" type="fixed">
     <parent link="base_link" />
     <child link="camera_body" />
@@ -95,5 +87,17 @@
     <parent link="base_link" />
     <child link="camera_visor" />
     <origin xyz="0. 0. 0." rpy="0. 0. 0." />
+  </joint>
+
+  <joint name="base_imu_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="imu_link" />
+    <origin xyz="0 0 0" />
+  </joint>
+  <joint name="base_depth_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="depth_camera_link" />
+	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
+    <origin rpy="0 -1.570796 0" xyz="0.000 0 0.0000" />
   </joint>
 </robot>
