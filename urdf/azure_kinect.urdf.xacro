@@ -48,7 +48,7 @@
     </visual>
   </link>
   <link name="depth_camera_link">
-    <parent link="odom" />
+    <parent link="map" />
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
