@@ -37,7 +37,7 @@
       <material name="brightRed" />
     </visual>
   </link>
-    <link name="imu_link">
+    <link name="imu">
       <parent link="odom" />
     <visual>
       <origin xyz="0 0 0" />
@@ -90,14 +90,14 @@
   </joint>
 
   <joint name="base_imu_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="imu_link" />
-    <origin xyz="0 0 0" />
+    <parent link="depth_camera_link" />
+    <child link="imu" />
+    <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
   <joint name="base_depth_joint" type="fixed">
     <parent link="base_link" />
     <child link="depth_camera_link" />
 	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000"  -->
-    <origin rpy="0 -1.570796 0" xyz="0.000 0 0.0000" />
+    <origin rpy="0 0 0" xyz="0.000 0 0.0000" />
   </joint>
 </robot>

@@ -7,11 +7,14 @@ Panels:
         - /Global Options1
         - /Status1
         - /TF1
+        - /TF1/Frames1
         - /TF1/Tree1
-        - /RobotModel1/Status1
+        - /TF1/Tree1/map1
+        - /TF1/Tree1/map1/odom1
+        - /TF1/Tree1/map1/odom1/depth_camera_link1
         - /Submaps1
         - /Submaps1/Submaps1
-        - /PointCloud21
+        - /Submaps1/Submaps1/Trajectory 01
         - /Trajectories1/Namespaces1
         - /Imu1/Box properties1
         - /Imu1/Axes properties1
@@ -74,15 +77,9 @@ Visualization Manager:
         All Enabled: false
         base_link:
           Value: true
-        camera_base:
-          Value: false
-        camera_body:
-          Value: false
-        camera_visor:
-          Value: false
         depth_camera_link:
           Value: false
-        imu_link:
+        imu:
           Value: true
         map:
           Value: true
@@ -97,16 +94,11 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          camera_body:
-            {}
-          camera_visor:
-            {}
-          imu_link:
-            {}
         map:
           odom:
             depth_camera_link:
+              imu:
+                {}
               rgb_camera_link:
                 {}
       Update Interval: 12
@@ -175,8 +167,13 @@ Visualization Manager:
           39.120: false
           4.120: false
           40.120: false
-          41.85: false
-          42.25: false
+          41.120: true
+          42.120: true
+          43.120: false
+          44.120: false
+          45.120: false
+          46.119: false
+          47.59: false
           5.120: false
           6.120: false
           7.120: false
@@ -208,7 +205,7 @@ Visualization Manager:
       Min Intensity: 0
       Name: PointCloud2
       Position Transformer: XYZ
-      Queue Size: 10
+      Queue Size: 1
       Selectable: false
       Size (Pixels): 1
       Size (m): 0.05000000074505806
@@ -219,13 +216,13 @@ Visualization Manager:
       Use rainbow: true
       Value: true
     - Class: rviz/MarkerArray
-      Enabled: false
+      Enabled: true
       Marker Topic: /trajectory_node_list
       Name: Trajectories
       Namespaces:
-        {}
+        Trajectory 0: true
       Queue Size: 10
-      Value: false
+      Value: true
     - Class: rviz/MarkerArray
       Enabled: false
       Marker Topic: /trajectory_node_list
@@ -342,7 +339,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: imu
     Frame Rate: 15
   Name: root
   Tools:
@@ -366,7 +363,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 8.985696792602539
+      Distance: 10.91974925994873
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -382,9 +379,9 @@ Visualization Manager:
       Invert Z Axis: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.1697965860366821
+      Pitch: 0.06979764997959137
       Target Frame: camera_base
-      Yaw: 3.255411386489868
+      Yaw: 6.140430927276611
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -424,5 +421,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 671
-  Y: 92
+  X: 364
+  Y: 113
