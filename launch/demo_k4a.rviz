@@ -6,20 +6,23 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /Grid1
         - /TF1
         - /TF1/Frames1
+        - /TF1/Frames1/imu1
+        - /TF1/Frames1/map1
+        - /TF1/Frames1/odom1
         - /TF1/Tree1
+        - /TF1/Tree1/base_link1
+        - /TF1/Tree1/base_link1/depth_camera_link1
         - /TF1/Tree1/map1
-        - /TF1/Tree1/map1/odom1
-        - /TF1/Tree1/map1/odom1/depth_camera_link1
+        - /RobotModel1/Links1/imu1
         - /Submaps1
-        - /Submaps1/Submaps1
-        - /Submaps1/Submaps1/Trajectory 01
         - /Trajectories1/Namespaces1
-        - /Imu1/Box properties1
-        - /Imu1/Axes properties1
-        - /Imu1/Acceleration properties1
-        - /Map1
+        - /Constraints1
+        - /Constraints1/Namespaces1
+        - /Imu1
+        - /Map1/Orientation1
         - /DepthCloud1
         - /DepthCloud1/Auto Size1
         - /DepthCloud1/Occlusion Compensation1
@@ -67,8 +70,8 @@ Visualization Manager:
         Y: 0
         Z: 0
       Plane: XY
-      Plane Cell Count: 100
-      Reference Frame: <Fixed Frame>
+      Plane Cell Count: 15
+      Reference Frame: imu
       Value: true
     - Class: rviz/TF
       Enabled: true
@@ -76,6 +79,10 @@ Visualization Manager:
       Frames:
         All Enabled: false
         base_link:
+          Value: true
+        camera_body:
+          Value: true
+        camera_visor:
           Value: true
         depth_camera_link:
           Value: false
@@ -94,30 +101,61 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
+        base_link:
+          camera_body:
+            {}
+          camera_visor:
+            {}
+          depth_camera_link:
+            imu:
+              {}
+            rgb_camera_link:
+              {}
         map:
           odom:
-            depth_camera_link:
-              imu:
-                {}
-              rgb_camera_link:
-                {}
+            {}
       Update Interval: 12
       Value: true
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: false
+      Enabled: true
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_body:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_visor:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        depth_camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: false
+      Value: true
       Visual Enabled: true
     - Class: Submaps
       Enabled: true
@@ -134,21 +172,170 @@ Visualization Manager:
           0.120: false
           1.120: false
           10.120: false
+          100.120: false
+          101.120: false
+          102.120: false
+          103.120: false
+          104.120: false
+          105.120: false
+          106.120: false
+          107.120: false
+          108.120: false
+          109.120: false
           11.120: false
+          110.120: false
+          111.120: false
+          112.120: false
+          113.120: false
+          114.120: false
+          115.120: false
+          116.120: false
+          117.120: false
+          118.120: false
+          119.120: false
           12.120: false
+          120.120: false
+          121.120: false
+          122.120: false
+          123.120: false
+          124.120: false
+          125.120: false
+          126.120: false
+          127.120: false
+          128.120: false
+          129.120: false
           13.120: false
+          130.120: false
+          131.120: false
+          132.120: false
+          133.120: false
+          134.120: false
+          135.120: false
+          136.120: false
+          137.120: false
+          138.120: false
+          139.120: false
           14.120: false
+          140.120: false
+          141.120: false
+          142.120: false
+          143.120: false
+          144.120: false
+          145.120: false
+          146.120: false
+          147.120: false
+          148.120: false
+          149.120: false
           15.120: false
+          150.120: false
+          151.120: false
+          152.120: false
+          153.120: false
+          154.120: false
+          155.120: false
+          156.120: false
+          157.120: false
+          158.120: false
+          159.120: false
           16.120: false
+          160.120: false
+          161.120: false
+          162.120: false
+          163.120: false
+          164.120: false
+          165.120: false
+          166.120: false
+          167.120: false
+          168.120: false
+          169.120: false
           17.120: false
+          170.120: false
+          171.120: false
+          172.120: false
+          173.120: false
+          174.120: false
+          175.120: false
+          176.120: false
+          177.120: false
+          178.120: false
+          179.120: false
           18.120: false
+          180.120: false
+          181.120: false
+          182.120: false
+          183.120: false
+          184.120: false
+          185.120: false
+          186.120: false
+          187.120: false
+          188.120: false
+          189.120: false
           19.120: false
+          190.120: false
+          191.120: false
+          192.120: false
+          193.120: false
+          194.120: false
+          195.120: false
+          196.120: false
+          197.120: false
+          198.120: false
+          199.120: false
           2.120: false
           20.120: false
+          200.120: false
+          201.120: false
+          202.120: false
+          203.120: false
+          204.120: false
+          205.120: false
+          206.120: false
+          207.120: false
+          208.120: false
+          209.120: false
           21.120: false
+          210.120: false
+          211.120: false
+          212.120: false
+          213.120: false
+          214.120: false
+          215.120: false
+          216.120: false
+          217.120: false
+          218.120: false
+          219.120: false
           22.120: false
+          220.120: false
+          221.120: false
+          222.120: false
+          223.120: false
+          224.120: false
+          225.120: false
+          226.120: false
+          227.120: false
+          228.120: false
+          229.120: false
           23.120: false
+          230.120: false
+          231.120: false
+          232.120: false
+          233.120: false
+          234.120: false
+          235.120: false
+          236.120: false
+          237.120: false
+          238.120: false
+          239.120: false
           24.120: false
+          240.120: false
+          241.120: false
+          242.120: false
+          243.120: false
+          244.120: false
+          245.120: false
+          246.120: false
+          247.87: false
+          248.27: false
           25.120: false
           26.120: false
           27.120: false
@@ -167,18 +354,70 @@ Visualization Manager:
           39.120: false
           4.120: false
           40.120: false
-          41.120: true
-          42.120: true
+          41.120: false
+          42.120: false
           43.120: false
           44.120: false
           45.120: false
-          46.119: false
-          47.59: false
+          46.120: false
+          47.120: false
+          48.120: false
+          49.120: false
           5.120: false
+          50.120: false
+          51.120: false
+          52.120: false
+          53.120: false
+          54.120: false
+          55.120: false
+          56.120: false
+          57.120: false
+          58.120: false
+          59.120: false
           6.120: false
+          60.120: false
+          61.120: false
+          62.120: false
+          63.120: false
+          64.120: false
+          65.120: false
+          66.120: false
+          67.120: false
+          68.120: false
+          69.120: false
           7.120: false
+          70.120: false
+          71.120: false
+          72.120: false
+          73.120: false
+          74.120: false
+          75.120: false
+          76.120: false
+          77.120: false
+          78.120: false
+          79.120: false
           8.120: false
+          80.120: false
+          81.120: false
+          82.120: false
+          83.120: false
+          84.120: false
+          85.120: false
+          86.120: false
+          87.120: false
+          88.120: false
+          89.120: false
           9.120: false
+          90.120: false
+          91.120: false
+          92.120: false
+          93.120: false
+          94.120: false
+          95.120: false
+          96.120: false
+          97.120: false
+          98.120: false
+          99.120: false
           Submap Pose Markers: false
           Value: false
       Topic: /submap_list
@@ -237,7 +476,7 @@ Visualization Manager:
       Name: Constraints
       Namespaces:
         {}
-      Queue Size: 100
+      Queue Size: 3
       Value: false
     - Acceleration properties:
         Acc. vector alpha: 0.800000011920929
@@ -251,7 +490,7 @@ Visualization Manager:
       Box properties:
         Box alpha: 0.6000000238418579
         Box color: 155; 185; 255
-        Enable box: true
+        Enable box: false
         x_scale: 0.10000000149011612
         y_scale: 0.10000000149011612
         z_scale: 0.10000000149011612
@@ -262,7 +501,7 @@ Visualization Manager:
       Topic: /imu
       Unreliable: false
       Value: true
-      fixed_frame_orientation: true
+      fixed_frame_orientation: false
     - Alpha: 0.699999988079071
       Class: rviz/Map
       Color Scheme: map
@@ -339,7 +578,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: imu
+    Fixed Frame: map
     Frame Rate: 15
   Name: root
   Tools:
@@ -363,7 +602,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 10.91974925994873
+      Distance: 18.180171966552734
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -376,12 +615,12 @@ Visualization Manager:
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: true
+      Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.06979764997959137
+      Pitch: 0.2747970521450043
       Target Frame: camera_base
-      Yaw: 6.140430927276611
+      Yaw: 4.148622512817383
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -411,7 +650,7 @@ Window Geometry:
   Height: 866
   Hide Left Dock: false
   Hide Right Dock: false
-  QMainWindow State: 000000ff00000000fd000000040000000000000241000002d2fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005d00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000039000002d2000000ca00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d006500720061000000024c000000bf0000001600ffffff00000001000001c0000002d2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fc00000039000002d2000000a100fffffffa000000010100000002fb0000000c00430061006d0065007200610000000000ffffffff0000000000000000fb0000000a00560069006500770073010000050d0000010f000000f100fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000061c00000037fc0100000002fb0000000800540069006d006501000000000000061c0000028500fffffffb0000000800540069006d0065010000000000000450000000000000000000000213000002d200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000004000000000000017a000002d2fc0200000009fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000005d00fffffffb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb000000100044006900730070006c0061007900730100000039000002d2000000ca00fffffffb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000c00430061006d006500720061000000024c000000bf0000001600ffffff00000001000001c0000002d2fc0200000003fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fc00000039000002d2000000a100fffffffa000000010100000002fb0000000c00430061006d0065007200610000000000ffffffff0000000000000000fb0000000a00560069006500770073010000050d0000010f000000f100fffffffb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e100000197000000030000061c00000037fc0100000002fb0000000800540069006d006501000000000000061c0000028500fffffffb0000000800540069006d00650100000000000004500000000000000000000002da000002d200000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Selection:
     collapsed: false
   Time:
@@ -421,5 +660,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 364
-  Y: 113
+  X: 948
+  Y: 120
