@@ -48,7 +48,8 @@ public:
   std::string tf_prefix_ = "";
   std::string camera_base_frame_ = "base_link";
   std::string rgb_camera_frame_ = "rgb_camera_link";
-  std::string depth_camera_frame_ = "depth_camera_link";
+  std::string depth_camera_frame_ = "scan";
+  //std::string depth_camera_frame_ = "depth_camera_link";
   //BAH 4/24
   //std::string imu_frame_ = "imu_link";
   std::string imu_frame_ = "imu";

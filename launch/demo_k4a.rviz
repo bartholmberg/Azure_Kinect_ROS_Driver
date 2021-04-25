@@ -9,14 +9,9 @@ Panels:
         - /Grid1
         - /TF1
         - /TF1/Frames1
-        - /TF1/Frames1/imu1
-        - /TF1/Frames1/map1
-        - /TF1/Frames1/odom1
-        - /TF1/Tree1
-        - /TF1/Tree1/base_link1
-        - /TF1/Tree1/base_link1/depth_camera_link1
         - /TF1/Tree1/map1
-        - /RobotModel1/Links1/imu1
+        - /TF1/Tree1/map1/odom1
+        - /TF1/Tree1/map1/odom1/scan1
         - /Submaps1
         - /Trajectories1/Namespaces1
         - /Constraints1
@@ -84,8 +79,6 @@ Visualization Manager:
           Value: true
         camera_visor:
           Value: true
-        depth_camera_link:
-          Value: false
         imu:
           Value: true
         map:
@@ -94,6 +87,8 @@ Visualization Manager:
           Value: true
         rgb_camera_link:
           Value: false
+        scan:
+          Value: true
       Marker Alpha: 0.800000011920929
       Marker Scale: 0.6000000238418579
       Name: TF
@@ -101,19 +96,13 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        base_link:
-          camera_body:
-            {}
-          camera_visor:
-            {}
-          depth_camera_link:
-            imu:
-              {}
-            rgb_camera_link:
-              {}
         map:
           odom:
-            {}
+            scan:
+              imu:
+                {}
+              rgb_camera_link:
+                {}
       Update Interval: 12
       Value: true
     - Alpha: 1
@@ -141,12 +130,12 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        depth_camera_link:
+        imu:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        imu:
+        scan:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -171,253 +160,10 @@ Visualization Manager:
         Trajectory 0:
           0.120: false
           1.120: false
-          10.120: false
-          100.120: false
-          101.120: false
-          102.120: false
-          103.120: false
-          104.120: false
-          105.120: false
-          106.120: false
-          107.120: false
-          108.120: false
-          109.120: false
-          11.120: false
-          110.120: false
-          111.120: false
-          112.120: false
-          113.120: false
-          114.120: false
-          115.120: false
-          116.120: false
-          117.120: false
-          118.120: false
-          119.120: false
-          12.120: false
-          120.120: false
-          121.120: false
-          122.120: false
-          123.120: false
-          124.120: false
-          125.120: false
-          126.120: false
-          127.120: false
-          128.120: false
-          129.120: false
-          13.120: false
-          130.120: false
-          131.120: false
-          132.120: false
-          133.120: false
-          134.120: false
-          135.120: false
-          136.120: false
-          137.120: false
-          138.120: false
-          139.120: false
-          14.120: false
-          140.120: false
-          141.120: false
-          142.120: false
-          143.120: false
-          144.120: false
-          145.120: false
-          146.120: false
-          147.120: false
-          148.120: false
-          149.120: false
-          15.120: false
-          150.120: false
-          151.120: false
-          152.120: false
-          153.120: false
-          154.120: false
-          155.120: false
-          156.120: false
-          157.120: false
-          158.120: false
-          159.120: false
-          16.120: false
-          160.120: false
-          161.120: false
-          162.120: false
-          163.120: false
-          164.120: false
-          165.120: false
-          166.120: false
-          167.120: false
-          168.120: false
-          169.120: false
-          17.120: false
-          170.120: false
-          171.120: false
-          172.120: false
-          173.120: false
-          174.120: false
-          175.120: false
-          176.120: false
-          177.120: false
-          178.120: false
-          179.120: false
-          18.120: false
-          180.120: false
-          181.120: false
-          182.120: false
-          183.120: false
-          184.120: false
-          185.120: false
-          186.120: false
-          187.120: false
-          188.120: false
-          189.120: false
-          19.120: false
-          190.120: false
-          191.120: false
-          192.120: false
-          193.120: false
-          194.120: false
-          195.120: false
-          196.120: false
-          197.120: false
-          198.120: false
-          199.120: false
           2.120: false
-          20.120: false
-          200.120: false
-          201.120: false
-          202.120: false
-          203.120: false
-          204.120: false
-          205.120: false
-          206.120: false
-          207.120: false
-          208.120: false
-          209.120: false
-          21.120: false
-          210.120: false
-          211.120: false
-          212.120: false
-          213.120: false
-          214.120: false
-          215.120: false
-          216.120: false
-          217.120: false
-          218.120: false
-          219.120: false
-          22.120: false
-          220.120: false
-          221.120: false
-          222.120: false
-          223.120: false
-          224.120: false
-          225.120: false
-          226.120: false
-          227.120: false
-          228.120: false
-          229.120: false
-          23.120: false
-          230.120: false
-          231.120: false
-          232.120: false
-          233.120: false
-          234.120: false
-          235.120: false
-          236.120: false
-          237.120: false
-          238.120: false
-          239.120: false
-          24.120: false
-          240.120: false
-          241.120: false
-          242.120: false
-          243.120: false
-          244.120: false
-          245.120: false
-          246.120: false
-          247.87: false
-          248.27: false
-          25.120: false
-          26.120: false
-          27.120: false
-          28.120: false
-          29.120: false
           3.120: false
-          30.120: false
-          31.120: false
-          32.120: false
-          33.120: false
-          34.120: false
-          35.120: false
-          36.120: false
-          37.120: false
-          38.120: false
-          39.120: false
-          4.120: false
-          40.120: false
-          41.120: false
-          42.120: false
-          43.120: false
-          44.120: false
-          45.120: false
-          46.120: false
-          47.120: false
-          48.120: false
-          49.120: false
-          5.120: false
-          50.120: false
-          51.120: false
-          52.120: false
-          53.120: false
-          54.120: false
-          55.120: false
-          56.120: false
-          57.120: false
-          58.120: false
-          59.120: false
-          6.120: false
-          60.120: false
-          61.120: false
-          62.120: false
-          63.120: false
-          64.120: false
-          65.120: false
-          66.120: false
-          67.120: false
-          68.120: false
-          69.120: false
-          7.120: false
-          70.120: false
-          71.120: false
-          72.120: false
-          73.120: false
-          74.120: false
-          75.120: false
-          76.120: false
-          77.120: false
-          78.120: false
-          79.120: false
-          8.120: false
-          80.120: false
-          81.120: false
-          82.120: false
-          83.120: false
-          84.120: false
-          85.120: false
-          86.120: false
-          87.120: false
-          88.120: false
-          89.120: false
-          9.120: false
-          90.120: false
-          91.120: false
-          92.120: false
-          93.120: false
-          94.120: false
-          95.120: false
-          96.120: false
-          97.120: false
-          98.120: false
-          99.120: false
+          4.71: false
+          5.11: false
           Submap Pose Markers: false
           Value: false
       Topic: /submap_list
@@ -506,12 +252,12 @@ Visualization Manager:
       Class: rviz/Map
       Color Scheme: map
       Draw Behind: true
-      Enabled: false
+      Enabled: true
       Name: Map
       Topic: /map
       Unreliable: false
       Use Timestamp: false
-      Value: false
+      Value: true
     - Alpha: 1
       Auto Size:
         Auto Size Factor: 1
@@ -578,7 +324,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: map
+    Fixed Frame: imu
     Frame Rate: 15
   Name: root
   Tools:
@@ -602,7 +348,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 18.180171966552734
+      Distance: 14.546402931213379
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -615,12 +361,12 @@ Visualization Manager:
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: false
+      Invert Z Axis: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.2747970521450043
+      Pitch: 0.549797534942627
       Target Frame: camera_base
-      Yaw: 4.148622512817383
+      Yaw: 0.00545156467705965
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -660,5 +406,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 948
-  Y: 120
+  X: 371
+  Y: 99

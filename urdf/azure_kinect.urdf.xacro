@@ -38,7 +38,7 @@
     </visual>
   </link>
     <link name="imu">
-      <parent link="odom" />
+      <parent link="base_link" />
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -47,7 +47,7 @@
       <material name="orange" />
     </visual>
   </link>
-  <link name="depth_camera_link">
+  <link name="odom">
     <parent link="map" />
     <visual>
       <origin xyz="0 0 0" />
@@ -90,13 +90,13 @@
   </joint>
 
   <joint name="base_imu_joint" type="fixed">
-    <parent link="depth_camera_link" />
+    <parent link="base_link" />
     <child link="imu" />
     <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
-  <joint name="base_depth_joint" type="fixed">
+  <joint name="base_odom_joint" type="fixed">
     <parent link="base_link" />
-    <child link="depth_camera_link" />
+    <child link="odom" />
 	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000" -->
     <origin rpy="0 0 0" xyz="0.000 0 0.0000" />
   </joint>
