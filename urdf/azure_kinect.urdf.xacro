@@ -37,8 +37,7 @@
       <material name="brightRed" />
     </visual>
   </link>
-    <link name="imu">
-      <parent link="base_link" />
+  <link name="imu">
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -47,17 +46,6 @@
       <material name="orange" />
     </visual>
   </link>
-  <link name="odom">
-    <parent link="map" />
-    <visual>
-      <origin xyz="0 0 0" />
-      <geometry>
-        <cylinder length="0.05" radius="0.03" />
-      </geometry>
-      <material name="gray" />
-    </visual>
-  </link>
-
 
   <link name="camera_body">
     <visual>
@@ -68,36 +56,19 @@
       <material name="white" />
     </visual>
   </link>
-  <link name="camera_visor">
-    <visual>
-      <origin xyz="-0.0128 0. 0." />
-      <geometry>
-        <box size="0.026 0.101 0.037" />
-      </geometry>
-      <material name="black" />
-    </visual>
-  </link>
+
   <joint name="base_to_body" type="fixed">
     <parent link="base_link" />
     <child link="camera_body" />
     <origin xyz="-0.0757 0. 0.008" rpy="0. 0. 0." />
   </joint>
 
-  <joint name="base_to_visor" type="fixed">
-    <parent link="base_link" />
-    <child link="camera_visor" />
-    <origin xyz="0. 0. 0." rpy="0. 0. 0." />
-  </joint>
+
 
   <joint name="base_imu_joint" type="fixed">
     <parent link="base_link" />
     <child link="imu" />
     <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
-  <joint name="base_odom_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="odom" />
-	<!--origin rpy="0 -1.570796 3.141593" xyz="0.000 0 0.0000" -->
-    <origin rpy="0 0 0" xyz="0.000 0 0.0000" />
-  </joint>
+
 </robot>
