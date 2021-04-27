@@ -37,7 +37,7 @@
       <material name="brightRed" />
     </visual>
   </link>
-  <link name="imu">
+  <link name="imu_link">
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -67,7 +67,7 @@
 
   <joint name="base_imu_joint" type="fixed">
     <parent link="base_link" />
-    <child link="imu" />
+    <child link="imu_link" />
     <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
 
