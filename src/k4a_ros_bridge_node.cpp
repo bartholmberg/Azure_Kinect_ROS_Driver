@@ -37,14 +37,16 @@ int main(int argc, char** argv)
   }
 
   ROS_INFO("K4A Started");
-
+  ros::Rate r(10);  // 10 hz
   if (result == K4A_RESULT_SUCCEEDED)
   {
-    ros::spin();
-
-    ROS_INFO("ROS Exit Started");
+    //ros::spin();
+    while (ros::ok()) {
+      ros::spinOnce();
+      r.sleep(); 
+      }
   }
-
+  ROS_INFO("ROS Exit Started");
   device.reset();
 
   ROS_INFO("ROS Exit");

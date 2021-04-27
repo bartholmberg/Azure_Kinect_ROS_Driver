@@ -10,6 +10,9 @@ Panels:
         - /TF1
         - /TF1/Frames1
         - /Submaps1
+        - /Submaps1/Submaps1
+        - /Submaps1/Submaps1/Trajectory 01
+        - /PointCloud21
         - /Trajectories1/Namespaces1
         - /Constraints1
         - /Constraints1/Namespaces1
@@ -149,7 +152,7 @@ Visualization Manager:
       Submap query service: /submap_query
       Submaps:
         All: false
-        All Submap Pose Markers: false
+        All Submap Pose Markers: true
         Trajectory 0:
           0.120: false
           1.120: false
@@ -179,15 +182,34 @@ Visualization Manager:
           31.120: false
           32.120: false
           33.120: false
-          34.70: false
-          35.10: false
+          34.120: false
+          35.120: false
+          36.120: false
+          37.120: false
+          38.120: false
+          39.120: false
           4.120: false
+          40.120: false
+          41.120: false
+          42.120: false
+          43.120: false
+          44.120: false
+          45.120: false
+          46.120: false
+          47.120: false
+          48.120: false
+          49.120: false
           5.120: false
+          50.120: false
+          51.120: false
+          52.120: false
+          53.84: false
+          54.24: false
           6.120: false
           7.120: false
           8.120: false
           9.120: false
-          Submap Pose Markers: false
+          Submap Pose Markers: true
           Value: false
       Topic: /submap_list
       Tracking frame: base_link
@@ -371,7 +393,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 5.5774312019348145
+      Distance: 36.69947814941406
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -387,9 +409,9 @@ Visualization Manager:
       Invert Z Axis: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.029798012226819992
+      Pitch: 0.20479758083820343
       Target Frame: camera_base
-      Yaw: 6.1654133796691895
+      Yaw: 6.125414848327637
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -429,5 +451,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 360
-  Y: 67
+  X: 787
+  Y: 95
