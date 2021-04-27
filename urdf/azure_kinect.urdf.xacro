@@ -27,16 +27,7 @@
     <color rgba="1.0 0.5 0.2 1" />
   </material>
   
-  <link name="base_link">
-  	  <parent link="odom" />
-    <visual>
-      <origin xyz="-0.013 0. 0." />
-      <geometry>
-        <box size="0.026 0.103 0.039" />
-      </geometry>
-      <material name="brightRed" />
-    </visual>
-  </link>
+
   <link name="imu_link">
     <visual>
       <origin xyz="0 0 0" />
@@ -46,7 +37,7 @@
       <material name="orange" />
     </visual>
   </link>
-  <link name="depth_camera_link">
+  <link name="horizontal_laser_link">
     <visual>
       <origin xyz="0 0 0" />
       <geometry>
@@ -64,18 +55,17 @@
       <material name="white" />
     </visual>
   </link>
-   <joint name="depth_camera_link_joint" type="fixed">
-    <parent link="base_link" />
-    <child link="depth_camera_link" />
-    <origin xyz="0.0 0 0.0" />
-  </joint>
-
+  <link name="base_link" />
   <joint name="imu_link_joint" type="fixed">
     <parent link="base_link" />
     <child link="imu_link" />
     <origin rpy="0 0 0" xyz="0 0 0" />
   </joint>
-  
+  <joint name="horizontal_laser_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="horizontal_laser_link" />
+    <origin xyz="0.0 0 0.0" />
+  </joint>
   <joint name="base_to_body" type="fixed">
     <parent link="base_link" />
     <child link="camera_body" />

@@ -62,7 +62,7 @@ Visualization Manager:
         Z: 0
       Plane: XY
       Plane Cell Count: 15
-      Reference Frame: imu_link
+      Reference Frame: base_link
       Value: true
     - Class: rviz/TF
       Enabled: true
@@ -112,26 +112,6 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_body:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        depth_camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        imu_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -307,7 +287,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: imu_link
+    Fixed Frame: base_link
     Frame Rate: 15
   Name: root
   Tools:
@@ -331,7 +311,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 26.673198699951172
+      Distance: 12.109956741333008
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -344,12 +324,12 @@ Visualization Manager:
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: true
+      Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7497971653938293
+      Pitch: 0.12520228326320648
       Target Frame: camera_base
-      Yaw: 5.725419521331787
+      Yaw: 2.677266836166382
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -389,5 +369,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 153
-  Y: 80
+  X: 269
+  Y: 175
