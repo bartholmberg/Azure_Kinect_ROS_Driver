@@ -247,9 +247,11 @@ tf2::Quaternion K4ACalibrationTransformData::getDepthToBaseRotationCorrection()
                                         // camera_base
   tf2::Quaternion depth_rotation;       // K4A has one physical camera that is about 6 degrees downward facing.
 
-  depth_rotation.setEuler(0, angles::from_degrees(-6.0), 0);
-  ros_camera_rotation.setEuler(M_PI / -2.0f, M_PI, (M_PI / 2.0f));
 
+  //BAH, 4/27
+  ros_camera_rotation.setEuler(M_PI / -2.0f, M_PI, (M_PI / 2.0f));
+  //ros_camera_rotation.setEuler(0, M_PI/2.0f, 0);
+  depth_rotation.setEuler(0, -angles::from_degrees(6.0), 0);
   return ros_camera_rotation * depth_rotation;
 }
 
