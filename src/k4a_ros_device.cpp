@@ -1255,7 +1255,7 @@ void K4AROSDevice::imuPublisherThread()
             }
 
             ROS_ASSERT_MSG(result == K4A_RESULT_SUCCEEDED, "Failed to get IMU frame");
-
+            imu_msg->linear_acceleration.z = -imu_msg->linear_acceleration.z;
             imu_orientation_publisher_.publish(imu_msg);
           }
         }
