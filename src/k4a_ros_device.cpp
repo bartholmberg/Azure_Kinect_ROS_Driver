@@ -212,7 +212,7 @@ K4AROSDevice::K4AROSDevice(const NodeHandle& n, const NodeHandle& p)
     // others can subscribe to 'rgb/image_raw' with compressed_image_transport.
     // This technique is described in:
     // http://wiki.ros.org/compressed_image_transport#Publishing_compressed_images_directly
-    rgb_jpeg_publisher_ = node_.advertise<CompressedImage>(node_.resolveName("rgb/image_raw") + "/compressed", 1);
+    rgb_jpeg_publisher_ = node_.advertise<CompressedImage>(node_.resolveName("rgb/image_raw") + "/jcompressed", 1);
   }
   else if (params_.color_format == "bgra")
   {
