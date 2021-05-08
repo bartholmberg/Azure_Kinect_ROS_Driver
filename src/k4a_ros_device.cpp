@@ -212,7 +212,7 @@ K4AROSDevice::K4AROSDevice(const NodeHandle& n, const NodeHandle& p)
     // others can subscribe to 'rgb/image_raw' with compressed_image_transport.
     // This technique is described in:
     // http://wiki.ros.org/compressed_image_transport#Publishing_compressed_images_directly
-    rgb_jpeg_publisher_ = node_.advertise<CompressedImage>(node_.resolveName("rgb/image_raw") + "/jcompressed", 1);
+    rgb_jpeg_publisher_ = node_.advertise<CompressedImage>(node_.resolveName("rgb/image_raw") + "/compressed", 1);
   }
   else if (params_.color_format == "bgra")
   {
@@ -1066,6 +1066,8 @@ void K4AROSDevice::framePublisherThread()
 
           rgb_jpeg_frame->header.stamp = capture_time;
           rgb_jpeg_frame->header.frame_id = calibration_data_.tf_prefix_ + calibration_data_.rgb_camera_frame_;
+          //BAH, May 07, 2021 - when recording we get interference between the depth image and compressed rgb
+          //                    for now just don't publish rgb
           rgb_jpeg_publisher_.publish(rgb_jpeg_frame);
 
           // Re-synchronize the header timestamps since we cache the camera calibration message
@@ -1256,6 +1258,7 @@ void K4AROSDevice::imuPublisherThread()
 
             ROS_ASSERT_MSG(result == K4A_RESULT_SUCCEEDED, "Failed to get IMU frame");
             imu_msg->linear_acceleration.z = -imu_msg->linear_acceleration.z;
+            imu_msg->linear_acceleration.x = -imu_msg->linear_acceleration.x;
             imu_orientation_publisher_.publish(imu_msg);
           }
         }

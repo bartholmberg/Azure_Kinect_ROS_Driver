@@ -9,14 +9,14 @@ Panels:
         - /Grid1
         - /TF1
         - /TF1/Frames1
+        - /RobotModel1
         - /Submaps1/Submaps1
-        - /PointCloud21
         - /Trajectories1/Namespaces1
         - /Constraints1
         - /Constraints1/Namespaces1
         - /Imu1
+        - /Imu1/Axes properties1
         - /Map1/Orientation1
-        - /DepthCloud1
         - /DepthCloud1/Auto Size1
         - /DepthCloud1/Occlusion Compensation1
       Splitter Ratio: 0.5986696481704712
@@ -113,6 +113,25 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_body:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        horizontal_laser_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        imu_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -129,7 +148,7 @@ Visualization Manager:
       Submap query service: /submap_query
       Submaps:
         All: false
-        All Submap Pose Markers: true
+        All Submap Pose Markers: false
       Topic: /submap_list
       Tracking frame: base_link
       Unreliable: false
@@ -288,7 +307,7 @@ Visualization Manager:
   Global Options:
     Background Color: 100; 100; 100
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 15
   Name: root
   Tools:
@@ -312,7 +331,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/ThirdPersonFollower
-      Distance: 14.758951187133789
+      Distance: 23.666671752929688
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -325,12 +344,12 @@ Visualization Manager:
         Z: 0
       Focal Shape Fixed Size: false
       Focal Shape Size: 0.05000000074505806
-      Invert Z Axis: false
+      Invert Z Axis: true
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.5247963666915894
+      Pitch: 1.349797248840332
       Target Frame: camera_base
-      Yaw: 3.5422470569610596
+      Yaw: 4.327281951904297
     Saved:
       - Class: rviz/ThirdPersonFollower
         Distance: 10
@@ -370,5 +389,5 @@ Window Geometry:
   Views:
     collapsed: false
   Width: 1564
-  X: 364
-  Y: 127
+  X: 399
+  Y: 117
